@@ -85,7 +85,6 @@ public interface Vocabulario {
                 indice++;
             }
 
-
             return resultado;
         }
     }
@@ -103,6 +102,5 @@ public interface Vocabulario {
     int BONUS = 10; // 10% de aumento en la puntuación por una zona sin disputa
     int D100 = 100; // Dado de 100 caras
     int NUM_ZONAS = 9;
-    String TipoServicio = "JUGADOR";
-
+    String NOMBRE_SERVICIO = "Juego Espías";
 }
