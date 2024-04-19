@@ -6,8 +6,8 @@ import static es.ujaen.ssmmaa.Vocabulario.*;
 
 public class Main {
     public static void main(String[] args) {
-        for (int i = 0; i < matrizPagos.length; i++)
-            System.out.println(Arrays.toString(matrizPagos[i]));
+        for (Pago[] matrizPago : matrizPagos)
+            System.out.println(Arrays.toString(matrizPago));
 
         for (int i = 0; i < NUM_ZONAS; i++) {
             System.out.println("Objetivo para la zona " + (i+1) + " es: " + Objetivo.getObjetivo());
