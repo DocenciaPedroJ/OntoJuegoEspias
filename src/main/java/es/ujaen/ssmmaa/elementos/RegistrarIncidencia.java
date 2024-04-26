@@ -7,6 +7,9 @@ import jade.content.onto.annotations.Slot;
 public class RegistrarIncidencia implements AgentAction {
     private TipoIncidencia tipoIncidencia;
 
+    public RegistrarIncidencia() {
+    }
+
     public RegistrarIncidencia(TipoIncidencia tipoIncidencia) {
         this.tipoIncidencia = tipoIncidencia;
     }

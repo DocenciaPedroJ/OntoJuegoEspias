@@ -10,6 +10,11 @@ public class Registro implements Predicate {
     public Registro() {
     }
 
+    public Registro(String idJuego, Agente agenteJuego) {
+        this.idJuego = idJuego;
+        this.agenteJuego = agenteJuego;
+    }
+
     @Slot(mandatory = true)
     public String getIdJuego() {
         return idJuego;

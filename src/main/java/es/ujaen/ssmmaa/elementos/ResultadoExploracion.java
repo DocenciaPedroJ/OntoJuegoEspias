@@ -12,6 +12,12 @@ public class ResultadoExploracion implements Predicate {
     public ResultadoExploracion() {
     }
 
+    public ResultadoExploracion(String idPartida, int numZona, Objetivo objetivo) {
+        this.idPartida = idPartida;
+        this.numZona = numZona;
+        this.objetivo = objetivo;
+    }
+
     @Slot(mandatory = true)
     public String getIdPartida() {
         return idPartida;

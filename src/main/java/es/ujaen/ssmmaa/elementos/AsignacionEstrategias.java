@@ -12,6 +12,11 @@ public class AsignacionEstrategias implements Predicate {
     public AsignacionEstrategias() {
     }
 
+    public AsignacionEstrategias(String idPartida, List listaAsignacion) {
+        this.idPartida = idPartida;
+        this.listaAsignacion = listaAsignacion;
+    }
+
     @Slot(mandatory = true)
     public String getIdPartida() {
         return idPartida;

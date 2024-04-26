@@ -10,6 +10,10 @@ public class AccionPartida implements Predicate {
     public AccionPartida() {
     }
 
+    public AccionPartida(String idPartida, EstadoPartida accion) {
+        this.idPartida = idPartida;
+        this.accion = accion;
+    }
 
     public String getIdPartida() {
         return idPartida;

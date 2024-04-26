@@ -6,6 +6,9 @@ import jade.content.onto.annotations.Slot;
 public class AsignarEstrategias implements AgentAction {
     private String idPartida;
 
+    public AsignarEstrategias() {
+    }
+
     public AsignarEstrategias(String idPartida) {
         this.idPartida = idPartida;
     }

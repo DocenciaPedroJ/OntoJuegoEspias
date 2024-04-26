@@ -8,6 +8,9 @@ import jade.util.leap.List;
 public class IniciarPartida implements AgentAction {
     private Partida partida;
 
+    public IniciarPartida() {
+    }
+
     public IniciarPartida(Partida partida) {
         this.partida = partida;
     }

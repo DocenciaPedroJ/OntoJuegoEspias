@@ -6,6 +6,9 @@ import jade.content.onto.annotations.Slot;
 public class SolicitarExploracion implements AgentAction {
     private String idPartida;
 
+    public SolicitarExploracion() {
+    }
+
     public SolicitarExploracion(String idPartida) {
         this.idPartida = idPartida;
     }
