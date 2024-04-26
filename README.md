@@ -1,4 +1,4 @@
-﻿[![logo](https://www.gnu.org/graphics/gplv3-127x51.png)](https://choosealicense.com/licenses/gpl-3.0/)
+[![logo](https://www.gnu.org/graphics/gplv3-127x51.png)](https://choosealicense.com/licenses/gpl-3.0/)
 # Juego de Espías
 ## Contexto del Juego
 Dos potencias enfrentadas, cada una buscando expandir su influencia mientras limita la del otro. Los jugadores representan las agencias de inteligencia de estas potencias, dedicadas al espionaje para ganar ventaja estratégica y al contraespionaje para proteger sus propios secretos.
@@ -17,9 +17,14 @@ Dos potencias enfrentadas, cada una buscando expandir su influencia mientras lim
 ### Normas para el Juego
 
 -   Los agentes que formarán parte del juego son los siguientes:
-    -   AgenteEspia. Es uno de los dos tipos de jugadores que formarán parte de la partida.
-    -   AgenteSeguridad. Es el otro tipo de jugador.
-    -   AgenteTablero. Es el encargado de crear partidas y inicialmente será el encargado de crear suficientes agentes para las partidas de un grupo de prácticas.
+	- **Agente** : Concepto abstracto que representa a los agentes en el juego.
+		- **AgenteJugador**
+    		- _AgenteEspia_. Es uno de los dos tipos de jugadores que formarán parte de la partida.
+    		- _AgenteSeguridad_. Es el otro tipo de jugador y que será el oponente del agente espía.
+		- **AgenteOrganizador**
+			- _AgenteMonitor_. Es el encargado de crear todos los agentes que comprondrán el juego y tendrá a su cargo la organización de un número de juegos.
+			- _AgenteOrganizador_. Es el encargado de crear las partidas para los juegos asociados según la disponibilidad de jugadores para cada juego.
+    		- _AgenteTablero_. Es el encargado de controlar el desarrollo de una partida con los dos jugadores asignados.
 -   El tablero de juego será una cuadrícula 3x3 que definen un total de 9 zonas donde se ubicarán los objetivos por los que competirán los agentes de la partida:
     -   Los tipos de objetivos serán: BajaPrioridad(20%), PrioridadNormal(60%), AltaPrioridad(15%), MaximaPrioridad(5%). Los puntos asociados serán de 1, 2, 3, 5 puntos cada uno de los tipos.
     -   El calculo de puntos para una zona en el juego corresponde a los puntos obtenidos de la tabla de pagos para la estrategias enfrentadas que los agentes han asignado a esa zona multiplicado por los puntos del objetivo. Si el objetivo no está en disputa por uno de los agentes el ganador obtiene un bono del 10% suponiendo que ha aplicado la estrategia más favorable, según la tabla de pagos.
