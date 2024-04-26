@@ -1,11 +1,45 @@
 package es.ujaen.ssmmaa;
 
 import java.util.Random;
+import java.util.function.BiFunction;
 
 public interface Vocabulario {
     Random aleatorio = new Random();
 
-    enum TipoAgente { ESPIA, SEGURIDAD, TABLERO}
+    enum TipoAgenteJugador { ESPIA, SEGURIDAD }
+    enum TipoAgenteOrganizador { TABLERO, ORGANIZADOR, MONITOR }
+    enum EstadoPartida {INICIO, ABANDONAR, SEGUIR_JUGANDO, FIN_EXPLORACION}
+
+    enum Motivacion {
+        JUEGOS_ACTIVOS_SUPERADOS, TIPO_JUEGO_DESCONOCIDO, ONTOLOGIA_DESCONOCIDA,
+        SUBSCRIPCION_ACEPTADA, FINALIZACION_AGENTE
+    }
+    enum TipoIncidencia{JUEGO_NO_INICIADO, RESULTADO_JUEGO}
+    enum Incidencia {
+        CANCELADO, JUGADORES_INSUFICIENTES,
+        ERROR_AGENTE, MENSAJE_INCORRECTO, ERROR_CONTENIDO_MENSAJE
+    }
+
+    enum ModoJuego {
+        INDIVIDUAL(2,2), EQUIPO(6,12),
+        TORNEO(6,12);
+
+        private int minJugadores;
+        private int maxJugadores;
+
+        ModoJuego(int minJugadores, int maxJugadores) {
+            this.minJugadores = minJugadores;
+            this.maxJugadores = maxJugadores;
+        }
+
+        public int getMinJugadores() {
+            return minJugadores;
+        }
+
+        public int getMaxJugadores() {
+            return maxJugadores;
+        }
+    }
 
     enum EstrategiaEspia {
         EO("Evaluar Objativos",2), PI("Planificar Infiltración",3), EE("Ejecutar Espionaje",4),
@@ -50,7 +84,9 @@ public interface Vocabulario {
     }
 
     enum Objetivo{
-        BAJA_PRIORIDAD(20,1), PRIORIDAD_NORMAL(60,2), ALTA_PRIORIDAD(15,3), MAXIMA_PRIORIAD(5,5);
+        BAJA_PRIORIDAD(20,1), PRIORIDAD_NORMAL(60,2),
+        ALTA_PRIORIDAD(15,3), MAXIMA_PRIORIAD(5,5),
+        DESCONOCIDO(0,0);
 
         int peso;
         int valor;
@@ -89,6 +125,10 @@ public interface Vocabulario {
         }
     }
 
+    /**
+     * Matriz con los pagos según la estrategia seleccionada por el jugador espía y
+     * el jugador de seguridad.
+     */
     Pago[][] matrizPagos = {
             {new Pago(1,-1), new Pago(0,0), new Pago(-1,1), new Pago(2,-2), new Pago(1,-1)},
             {new Pago(0,0), new Pago(1,-1), new Pago(-2,2), new Pago(1,-1), new Pago(0,0)},
@@ -97,10 +137,18 @@ public interface Vocabulario {
             {new Pago(2,-2), new Pago(-1,1), new Pago(1,-1), new Pago(2,-2), new Pago(-2,2)}
     };
 
+    /**
+     * Dada una estrategia para el jugador espía y otra para el jugador de seguridad se
+     * obtiene el pago correspondiente.
+     */
+    BiFunction<EstrategiaEspia,EstrategiaSeguridad,Pago> obtenerPago =
+            (estrategiaEspia, estrategiaSeguridad) -> matrizPagos[estrategiaEspia.ordinal()][estrategiaSeguridad.ordinal()];
+
     int MAX_PAGO = 3;
     int PUNTOS_ACCION = 30;
     int BONUS = 10; // 10% de aumento en la puntuación por una zona sin disputa
     int D100 = 100; // Dado de 100 caras
     int NUM_ZONAS = 9;
+    int MIN_PARTIDAS = 3; // mínimo de partidas que se deben jugar concurrentemente
     String NOMBRE_SERVICIO = "Juego Espías";
 }

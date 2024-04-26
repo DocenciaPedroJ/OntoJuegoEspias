@@ -3,13 +3,10 @@ package es.ujaen.ssmmaa.elementos;
 import jade.content.AgentAction;
 import jade.content.onto.annotations.Slot;
 
-public class SolicitarAsignacion implements AgentAction {
+public class SolicitarExploracion implements AgentAction {
     private String idPartida;
 
-    public SolicitarAsignacion() {
-    }
-
-    public SolicitarAsignacion(String idPartida) {
+    public SolicitarExploracion(String idPartida) {
         this.idPartida = idPartida;
     }
 
@@ -24,7 +21,7 @@ public class SolicitarAsignacion implements AgentAction {
 
     @Override
     public String toString() {
-        return "SolicitarAsignacion{" +
+        return "SolicitarExploracion{" +
                 "idPartida='" + idPartida + '\'' +
                 '}';
     }

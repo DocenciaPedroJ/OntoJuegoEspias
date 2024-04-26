@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+skinparam style strictuml
+title Registrar Incidencias (FIPA-Subscribe)
+participant MONITOR <<AgenteOrganizador>>
+participant ORGANIZADOR <<AgenteOrganizador>>
+
+
+MONITOR -> ORGANIZADOR : SUSBCRIBE ( RegistrarIncidencias )
+note left: 1 seg time-out
+activate MONITOR
+activate ORGANIZADOR
+
+ORGANIZADOR --> MONITOR : AGREE ( Justificacion )
+note right: Confirma que se ha \n realizado la susbcripción
+
+
+group informes de resultados juegos
+    ORGANIZADOR --> MONITOR : INFORM ( ResultadoJuego | IncidenciaJuego )
+    note right: Se informará en otra\n tarea
+end
+
+MONITOR --> ORGANIZADOR : CANCEL ( Justificacion )
+note left: finalización\n agente
+
+group incidencias
+    alt No es la ontología correcta
+        ORGANIZADOR --> MONITOR : NotUnderstoodException
+    else No se ha creado la suscripción
+        ORGANIZADOR --> MONITOR : RefuseException
+    end
+end
+
+@enduml

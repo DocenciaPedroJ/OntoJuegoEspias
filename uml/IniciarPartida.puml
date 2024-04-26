@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+title Iniciar Partida (FIPA-Propose)
+autonumber
+skinparam style strictuml
+participant ORGANIZADOR <<AgenteOrganizador>>
+participant AgenteJugador
+autonumber
+
+activate ORGANIZADOR
+ORGANIZADOR -> AgenteJugador --++ : PROPOSE( IniciarPartida )
+note left: 1 seg time-out
+alt acepta jugar
+    AgenteJugador --> ORGANIZADOR ++ : ACCEPT-PROPOSAL ( AccionPartida )
+else no acepta jugar
+    AgenteJugador --> ORGANIZADOR --: REJECT-PROPOSAL ( AccionPartida )
+end
+deactivate ORGANIZADOR
+
+group incidencias
+        AgenteJugador --> ORGANIZADOR ++ : NotUnderstoodException
+        note right
+            Usar excepción
+            si no es la ontología
+            OntoJuegoEspias
+        end note
+end
+
+@enduml

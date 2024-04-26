@@ -1,19 +1,19 @@
 package es.ujaen.ssmmaa.elementos;
 
-import es.ujaen.ssmmaa.Vocabulario.TipoAgente;
+import es.ujaen.ssmmaa.Vocabulario.TipoAgenteJugador;
 import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
 public class Estrategia implements Concept {
     private String estrategia;
-    private TipoAgente tipoAgente;
+    private TipoAgenteJugador jugador;
 
     public Estrategia() {
     }
 
-    public Estrategia(String estrategia, TipoAgente tipoAgente) {
+    public Estrategia(String estrategia, TipoAgenteJugador jugador) {
         this.estrategia = estrategia;
-        this.tipoAgente = tipoAgente;
+        this.jugador = jugador;
     }
 
     @Slot(mandatory = true)
@@ -26,19 +26,19 @@ public class Estrategia implements Concept {
     }
 
     @Slot(mandatory = true)
-    public TipoAgente getTipoAgente() {
-        return tipoAgente;
+    public TipoAgenteJugador getJugador() {
+        return jugador;
     }
 
-    public void setTipoAgente(TipoAgente tipoAgente) {
-        this.tipoAgente = tipoAgente;
+    public void setJugador(TipoAgenteJugador jugador) {
+        this.jugador = jugador;
     }
 
     @Override
     public String toString() {
         return "Estrategia{" +
-                "nombre='" + estrategia + '\'' +
-                ", tipoAgente=" + tipoAgente +
+                "estrategia='" + estrategia + '\'' +
+                ", jugador=" + jugador +
                 '}';
     }
 }

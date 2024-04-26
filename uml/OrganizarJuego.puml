@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+title Organizar Juego (FIPA-Propose)
+skinparam style strictuml
+participant MONITOR <<AgenteOrganizador>>
+participant ORGANIZADOR <<AgenteOrganizador>>
+
+activate MONITOR
+MONITOR -> ORGANIZADOR --++ : PROPOSE( OrganizarJuego )
+note left: 1 seg time-out
+alt acepta organizar
+    ORGANIZADOR --> MONITOR ++ : ACCEPT-PROPOSAL ( Registro )
+else no acepta organizar
+    ORGANIZADOR --> MONITOR --: REJECT-PROPOSAL ( Justificacion )
+end
+deactivate MONITOR
+
+group incidencias
+        ORGANIZADOR --> MONITOR ++ : NotUnderstoodException
+        note right
+            Usar excepción
+            si no es la ontología
+            OntoJuegoEspias
+        end note
+end
+
+@enduml

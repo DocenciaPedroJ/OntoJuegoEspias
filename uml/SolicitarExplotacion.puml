@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+title Solicitar Exploración (FIPA-CFP)
+skinparam style strictuml
+participant TABLERO <<AgenteOrganizador>>
+participant AgenteJugador
+
+activate TABLERO
+TABLERO -> AgenteJugador --++: CFP ( SolicitarExploracion )
+note left : 1 seg time-out
+
+alt acción de exploración
+    AgenteJugador --> TABLERO ++: PROPOSE( Exploracion )
+else fin exploración
+    AgenteJugador --> TABLERO --: REFUSE ( AccionPartida )
+end
+
+TABLERO -> AgenteJugador ++: ACCEPT_PROPOSAL ( ResultadoExploracion )
+
+AgenteJugador --> TABLERO --: INFORM ( AccionPartida )
+note right : Seguir explorando o finalizar
+deactivate TABLERO
+
+group incidencias
+        AgenteJugador --> TABLERO ++ : NotUnderstoodException
+        note right
+            Usar excepción
+            si no es la ontología
+            OntoJuegoEspias
+        end note
+end
+@enduml

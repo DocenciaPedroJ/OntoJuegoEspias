@@ -1,6 +1,6 @@
 package es.ujaen.ssmmaa;
 
-import es.ujaen.ssmmaa.Vocabulario.TipoAgente;
+import es.ujaen.ssmmaa.Vocabulario.TipoAgenteJugador;
 
 public class Pago {
     private final int pagoEspia;
@@ -11,11 +11,11 @@ public class Pago {
         this.pagoSeguridad = pagoSeguridad;
     }
 
-    public int getPago(TipoAgente tipo) {
-        return switch (tipo) {
+    public int getPago(TipoAgenteJugador jugador) {
+        return switch (jugador) {
             case ESPIA -> pagoEspia;
             case SEGURIDAD -> pagoSeguridad;
-            default -> throw new IllegalStateException("No hay pago definido para: " + tipo);
+            default -> throw new IllegalStateException("No hay pago definido para: " + jugador);
         };
     }
 

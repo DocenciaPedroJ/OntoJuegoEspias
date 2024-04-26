@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+title Asignar Estrategias (FIPA-CFP)
+skinparam style strictuml
+participant TABLERO <<AgenteOrganizador>>
+participant AgenteJugador
+
+activate TABLERO
+TABLERO -> AgenteJugador --++: CFP ( AsignarEstrategias )
+note left : 2 seg time-out
+
+alt asignación de estrategias
+    AgenteJugador --> TABLERO ++: PROPOSE( AsignacionEstrategias )
+else abandono
+    AgenteJugador --> TABLERO --: REFUSE ( AccionPartida )
+end
+
+
+TABLERO -> AgenteJugador ++: ACCEPT_PROPOSAL ( AsignacionEstrategias )
+note left : intercambio movimientos
+
+AgenteJugador --> TABLERO --: INFORM ( AccionPartida )
+note right : fin de la partida
+deactivate TABLERO
+
+group incidencias
+        AgenteJugador --> TABLERO ++ : NotUnderstoodException
+        note right
+            Usar excepción
+            si no es la ontología
+            OntoJuegoEspias
+        end note
+end
+@enduml
