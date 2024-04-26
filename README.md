@@ -321,7 +321,7 @@ Dependencias asociadas a la biblioteca de la ontología.
     </dependency>
     <dependency>
         <groupId>es.ujaen.ssmmaa</groupId>
-        <artifactId>OntoMouseRun</artifactId>
+        <artifactId>OntoJuegoEspias</artifactId>
         <version>1.0</version>
     </dependency>
 </dependencies>
