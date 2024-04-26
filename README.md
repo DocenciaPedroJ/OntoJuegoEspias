@@ -311,6 +311,8 @@ Dependencias asociadas a la biblioteca de la ontología.
         <url>https://jade.tilab.com/maven/</url>
     </repository>
 </repositories>
+```
+```xml
 <dependencies>
     <dependency>
         <groupId>com.tilab.jade</groupId>
@@ -324,7 +326,7 @@ Dependencias asociadas a la biblioteca de la ontología.
     </dependency>
 </dependencies>
 ```
-Para que tener acceso a las dependencias de la ontología se instalará manualmente en el ordenador del alumno. Para ello debemos descargar el fichero [`OntoJuegoEspias-1.0.jar`](https://platea.ujaen.es/pluginfile.php/173260/mod_assign/introattachment/0/OntoMouseRun-1.0.jar?forcedownload=1) que se encuentra asociado a la actividad en Platea. Posteriormente hay que ejecutar la sentencia maven:
+Para que tener acceso a las dependencias de la ontología se instalará manualmente en el ordenador del alumno. Para ello debemos descargar el fichero [`OntoJuegoEspias-1.0.jar`](https://platea.ujaen.es/pluginfile.php/413253/mod_resource/content/1/OntoJuegoEspias-1.0.jar) que se encuentra asociado a la actividad en Platea. Posteriormente hay que ejecutar la sentencia maven:
 ```
 mvn install:install-file -Dfile=DIRECTORIO_DE_LA_DESCARGA/OntoJuegoEspias-1.0.jar -DgroupId=es.ujaen.ssmmaa -DartifactId=OntoJuegoEspias -Dversion=1.0 -Dpackaging=jar
 ```
