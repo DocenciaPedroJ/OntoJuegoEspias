@@ -330,9 +330,9 @@ mvn install:install-file -Dfile=DIRECTORIO_DE_LA_DESCARGA/OntoJuegoEspias-1.0.ja
 ```
 Si hay actualizaciones en el proyecto de ontología se avisará a los alumnos para que hagan la actualización de la referencia de la ontología que se indicará en este documento siguiendo las instrucciones que se han presentado en los párrafos anteriores.
 
-[ProponerJuego]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto1.png
-[OrganizarJuego]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto2.png
-[RegistrarIncidencias]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto3.png
-[IniciarPartida]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto3.png
-[SolicitarExploracion]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto3.png
-[AsignarEstrategias]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto3.png
+[ProponerJuego]:https://gitlab.com/ssmmaa/curso2023-24/ontojuegoespias/-/raw/master/img/ProponerJuego.png?ref_type=heads
+[OrganizarJuego]:https://gitlab.com/ssmmaa/curso2023-24/ontojuegoespias/-/raw/master/img/OrganizarJuego.png?ref_type=heads
+[RegistrarIncidencias]:https://gitlab.com/ssmmaa/curso2023-24/ontojuegoespias/-/raw/master/img/RegistrarIncidencias.png?ref_type=heads
+[IniciarPartida]:https://gitlab.com/ssmmaa/curso2023-24/ontojuegoespias/-/raw/master/img/IniciarPartida.png?ref_type=heads
+[SolicitarExploracion]:https://gitlab.com/ssmmaa/curso2023-24/ontojuegoespias/-/raw/master/img/SolicitarExplotacion.png?ref_type=heads
+[AsignarEstrategias]:https://gitlab.com/ssmmaa/curso2023-24/ontojuegoespias/-/raw/master/img/AsignarEstrategias.png?ref_type=heads
