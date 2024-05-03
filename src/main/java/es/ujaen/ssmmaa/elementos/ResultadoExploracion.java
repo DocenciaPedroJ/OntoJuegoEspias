@@ -1,6 +1,5 @@
 package es.ujaen.ssmmaa.elementos;
 
-import es.ujaen.ssmmaa.Vocabulario.Objetivo;
 import jade.content.Predicate;
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
@@ -8,16 +7,14 @@ import jade.util.leap.List;
 
 public class ResultadoExploracion implements Predicate {
     private String idPartida;
-    private int numZona;
-    private List resultado;
+    private List operacionExploracion;
 
     public ResultadoExploracion() {
     }
 
-    public ResultadoExploracion(String idPartida, int numZona, List resultado) {
+    public ResultadoExploracion(String idPartida, List operacionExploracion) {
         this.idPartida = idPartida;
-        this.numZona = numZona;
-        this.resultado = resultado;
+        this.operacionExploracion = operacionExploracion;
     }
 
     @Slot(mandatory = true)
@@ -29,30 +26,20 @@ public class ResultadoExploracion implements Predicate {
         this.idPartida = idPartida;
     }
 
-    @Slot(mandatory = true)
-    public int getNumZona() {
-        return numZona;
+    @AggregateSlot(cardMin = 2, cardMax = 2, type = OperacionExploracion.class)
+    public List getOperacionExploracion() {
+        return operacionExploracion;
     }
 
-    public void setNumZona(int numZona) {
-        this.numZona = numZona;
-    }
-
-    @AggregateSlot(cardMin = 2, cardMax = 2, type = Objetivo.class)
-    public List getResultado() {
-        return resultado;
-    }
-
-    public void setResultado(List resultado) {
-        this.resultado = resultado;
+    public void setOperacionExploracion(List operacionExploracion) {
+        this.operacionExploracion = operacionExploracion;
     }
 
     @Override
     public String toString() {
         return "ResultadoExploracion{" +
                 "idPartida='" + idPartida + '\'' +
-                ", numZona=" + numZona +
-                ", resultado=" + resultado +
+                ", operacionExploracion=" + operacionExploracion +
                 '}';
     }
 }

@@ -252,8 +252,10 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 	- `numZona` : El número de la zona que se desea explorar. 
 - `ResultadoExploracion` : Se le comunica al jugador el resultado que ha obtenido de su exploración
 	- `idPartida` : El identificador de la partida.
-	- `numZona` : Número de la zona que se ha explorado.
-	- `List` : Es una lista con el resultado de exploración del jugador y la zona explorada de su rival, el valor del objetivo en este caso siempre es desconocido. Si la exploración fracasa también el objetivo será desconocido y en el vocabulario hay un valor para indicarlo.
+    - `List` : Es una colección de `OperacionExploracion`, el primero indica el resultado de la exploración del jugador y el segundo para informar de la zona que ha explorado el rival.
+      - `OperacionExploracion` : Contiene la información de un objetivo para una zona de juego.
+        - `numZona` : Número de la zona que se ha explorado.
+        - `Objetivo` : Si la operación de exploración ha sido un éxito se indica el objetivo de la zona. `DESCONOCIDO` si no ha sido así y también para comunicar solo la zona que ha explorado el rival.
  
 
 #### Asignación de estrategias
