@@ -155,7 +155,7 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 - `Registro` : Es un predicado que indica la disponibilidad de un jugador a participar en el juego propuesto.
 	- `idJuego` : Corresponde a un identificador válido para el juego anteriormente propuesto.
 	- `Agente` : Corresponde a la representación del agente en el juego.
-- Justificacion : Es un predicado que comunica el motivo por el que el agente jugador no tiene disponibilidad para participar en el juego propuesto.
+- `Justificacion` : Es un predicado que comunica el motivo por el que el agente jugador no tiene disponibilidad para participar en el juego propuesto.
 	- `idJuego` : Corresponde a un identificador válido para el juego anteriormente propuesto.
 	- `Motivacion` : Es un enumerado definido en el vocabulario para indicar la no disponibilidad.
 
@@ -254,6 +254,7 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 	- `idPartida` : El identificador de la partida.
 	- `numZona` : Número de la zona que se ha explorado.
 	- `Objetivo` : El valor del objetivo que se haya descubierto. La operación puede fracasar y en el vocabulario hay un objetivo para indicarlo.
+ 
 
 #### Asignación de estrategias
 Cuando los dos jugadores de una partida han completado sus turnos de exploración se pasa a la siguiente etapa de la partida y para ello se utiliza el siguiente protocolo:
