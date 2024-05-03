@@ -2,20 +2,22 @@ package es.ujaen.ssmmaa.elementos;
 
 import es.ujaen.ssmmaa.Vocabulario.Objetivo;
 import jade.content.Predicate;
+import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
+import jade.util.leap.List;
 
 public class ResultadoExploracion implements Predicate {
     private String idPartida;
     private int numZona;
-    private Objetivo objetivo;
+    private List resultado;
 
     public ResultadoExploracion() {
     }
 
-    public ResultadoExploracion(String idPartida, int numZona, Objetivo objetivo) {
+    public ResultadoExploracion(String idPartida, int numZona, List resultado) {
         this.idPartida = idPartida;
         this.numZona = numZona;
-        this.objetivo = objetivo;
+        this.resultado = resultado;
     }
 
     @Slot(mandatory = true)
@@ -36,13 +38,13 @@ public class ResultadoExploracion implements Predicate {
         this.numZona = numZona;
     }
 
-    @Slot(mandatory = true)
-    public Objetivo getObjetivo() {
-        return objetivo;
+    @AggregateSlot(cardMin = 2, cardMax = 2, type = Objetivo.class)
+    public List getResultado() {
+        return resultado;
     }
 
-    public void setObjetivo(Objetivo objetivo) {
-        this.objetivo = objetivo;
+    public void setResultado(List resultado) {
+        this.resultado = resultado;
     }
 
     @Override
@@ -50,7 +52,7 @@ public class ResultadoExploracion implements Predicate {
         return "ResultadoExploracion{" +
                 "idPartida='" + idPartida + '\'' +
                 ", numZona=" + numZona +
-                ", objetivo=" + objetivo +
+                ", resultado=" + resultado +
                 '}';
     }
 }
