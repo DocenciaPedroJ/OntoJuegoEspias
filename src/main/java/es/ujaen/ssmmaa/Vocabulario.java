@@ -42,7 +42,7 @@ public interface Vocabulario {
     }
 
     enum EstrategiaEspia {
-        EO("Evaluar Objativos",2), PI("Planificar Infiltración",3), EE("Ejecutar Espionaje",4),
+        EO("Evaluar Objetivos",2), PI("Planificar Infiltración",3), EE("Ejecutar Espionaje",4),
         EI("Extraer Información",5), DE("Desinformación",3);
 
         private String nombre;
@@ -85,7 +85,7 @@ public interface Vocabulario {
 
     enum Objetivo{
         BAJA_PRIORIDAD(20,1), PRIORIDAD_NORMAL(60,2),
-        ALTA_PRIORIDAD(15,3), MAXIMA_PRIORIAD(5,5),
+        ALTA_PRIORIDAD(15,3), MAXIMA_PRIORIDAD(5,5),
         DESCONOCIDO(0,0);
 
         int peso;
