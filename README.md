@@ -1,5 +1,5 @@
 # Juego de Espías
-## Contexto del Juego [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+## Contexto del Juego [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![](https://jitpack.io/v/DocenciaPedroJ/OntoJuegoEspias.svg)](https://jitpack.io/#DocenciaPedroJ/OntoJuegoEspias)
 Dos potencias enfrentadas, cada una buscando expandir su influencia mientras limita la del otro. Los jugadores representan las agencias de inteligencia de estas potencias, dedicadas al espionaje para ganar ventaja estratégica y al contraespionaje para proteger sus propios secretos.
 
 ### Objetivos
