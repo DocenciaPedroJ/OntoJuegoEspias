@@ -6,11 +6,11 @@
 
     <groupId>es.ujaen.ssmmaa</groupId>
     <artifactId>OntoJuegoEspias</artifactId>
-    <version>1.0</version>
+    <version>1.5</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -22,10 +22,13 @@
     </repositories>
 
     <dependencies>
+        <!-- JADE como dependencia local -->
         <dependency>
             <groupId>com.tilab.jade</groupId>
             <artifactId>jade</artifactId>
             <version>4.6.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/jade.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

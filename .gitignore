@@ -12,6 +12,11 @@ target/
 *.iml
 *.ipr
 
+# Permitir la carpeta libs con el jade.jar
+!libs/
+!libs/jade.jar
+
+
 ### Eclipse ###
 .apt_generated
 .classpath
